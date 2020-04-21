@@ -8,14 +8,9 @@ import {
 import { setSchedules } from "../../services/schedule";
 
 const mapDispatchToProps = dispatch => ({
-  openaddScheduleDialog: d => {
+  openAddScheduleDialog: d => {
     dispatch(addScheduleOpenDialog());
     dispatch(addScheduleSetValue({ date: d }));
-  },
-  openCurrentScheduleDialog: (schedule, e) => {
-    e.stopPropagation();
-    dispatch(currentScheduleSetItem(schedule));
-    dispatch(currentScheduleOpenDialog());
   }
 });
 
