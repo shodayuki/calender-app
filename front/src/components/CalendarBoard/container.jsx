@@ -13,7 +13,10 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const mapStateToProps = state => ({ calendar: state.calendar});
+const mapStateToProps = state => ({
+  calendar: state.calendar,
+  schedules: state.schedules
+});
 
 const mergeProps = (stateProps, dispatchProps) => ({
   ...stateProps,
