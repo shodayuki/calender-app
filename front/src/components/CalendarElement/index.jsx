@@ -8,8 +8,10 @@ import {
   isSameDay,
   getMonth
 } from "../../services/calendar";
+import CalendarElement from "../Schedule";
+import { Schedule } from "@material-ui/icons";
 
-const CalendarElement = ({ day, month }) => {
+const CalendarElement = ({ day, month, schedules }) => {
   const today = dayjs();
   const currentMonth = getMonth(month);
   const isCurrentMonth = isSameMonth(day, currentMonth);
@@ -30,6 +32,11 @@ const CalendarElement = ({ day, month }) => {
           {day.format(format)}
         </span>
       </Typography>
+      <div className={styles.schedules}>
+        {schedules.map(e => (
+          <Schedule key={e.id} schedule={e} />
+        ))}
+      </div>
     </div>
   );
 };
