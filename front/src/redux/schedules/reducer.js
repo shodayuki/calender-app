@@ -1,5 +1,4 @@
 import { SCHEDULES_ADD_ITEM } from "./actions";
-import dayjs from "dayjs";
 
 const init = {
   items: [],
