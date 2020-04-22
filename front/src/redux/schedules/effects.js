@@ -24,7 +24,7 @@ export const asyncSchedulesAddItem = schedule => async dispatch => {
   dispatch(schedulesAddItem(newSchedule));
 };
 
-export const asyncScheduesDeleteItem = id => async (dispatch, getState) => {
+export const asyncSchedulesDeleteItem = id => async (dispatch, getState) => {
   dispatch(schedulesSetLoading());
   const currentSchedules = getState().schedules.items;
 
