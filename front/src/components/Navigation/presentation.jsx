@@ -9,7 +9,6 @@ import {
 } from "@material-ui/core";
 import ArrowBackIos from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIos from "@material-ui/icons/ArrowForwardIos";
-import DehazeIcon from "@material-ui/icons/Dehaze";
 
 const StyledDatePicker = withStyles({
   root: { marginLeft: 30 }
@@ -26,9 +25,6 @@ const StyledTypography = withStyles({
 const Navigation = ({ setNextMonth, setPreviousMonth, setMonth, month }) => {
   return (
     <StyledToolbar>
-      <IconButton>
-        <DehazeIcon />
-      </IconButton>
       <img src="/images/calendar_icon.png" width="40" height="40" />
       <StyledTypography color="textSecondary" variant="h5" component="h1">
         カレンダー
