@@ -1,7 +1,7 @@
 import React from "react";
 import { Snackbar, IconButton } from "@material-ui/core";
-import { Close, Warning } from "material-ui/icons";
-import { makeStyles } from "material-ui/core/styles";
+import { Close, Warning } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   message: {
@@ -17,22 +17,22 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ErrorSnackbar = ({ error, handleClose }) = {
+const ErrorSnackbar = ({ error, handleClose }) => {
   const classes = useStyles();
 
-  return(
+  return (
     <Snackbar
       open={!!error}
-      onClose = { handleClose }
-      autoHideDuration = {3000}
-      anchorOrigin = {{ vertical: "bottom", horizontal: "right" }}
-      message = {
-        <span className={ classes.message } >
+      onClose={handleClose}
+      autoHideDuration={3000}
+      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      message={
+        <span className={classes.message}>
           <Warning className={[classes.icon, classes.iconVariant].join(" ")} />
           {error}
         </span>
       }
-      action = {
+      action={
         <IconButton color="inherit" onClick={handleClose}>
           <Close className={classes.icon} />
         </IconButton>

@@ -26,7 +26,7 @@ export const post = async (path, body) => {
   const result = await resp.json();
 
   return result;
-}
+};
 
 export const deleteRequest = async path => {
   const options = { method: "DELETE" };
@@ -34,10 +34,10 @@ export const deleteRequest = async path => {
   checkError(resp.status);
 
   return;
-}
+};
 
 const checkError = status => {
   if (status >= 400) {
     throw new Error("エラーが発生しました。時間を置いて再度お試しください。");
   }
-}
+};

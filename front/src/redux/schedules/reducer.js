@@ -41,16 +41,16 @@ const schedulesReducer = (state = init, action) => {
         isLoading: false,
         items: payload
       }
-    case SCHEDULES_ASYNC_FAILURE:
-      return {
-        ...state,
-        error: null
-      };
-    case SCHEDULES_RESET_ERROR:
-      return {
-        ...state,
-        error: null
-      };
+      case SCHEDULES_ASYNC_FAILURE:
+        return {
+          ...state,
+          error
+        };
+      case SCHEDULES_RESET_ERROR:
+        return {
+          ...state,
+          error: null
+        };
     default:
       return state;
   }

@@ -11,12 +11,12 @@ import { formatSchedule } from "../../services/schedule";
 export const asyncSchedulesFetchItem = ({ month, year }) => async dispatch => {
   dispatch(schedulesSetLoading());
   try {
-    const result = await get(`schedules?month=${month}&year=${year}`);
+    const result = await get(`schedules`);
+    // const result = await get(`schedules?month=${month}&year=${year}`);
     const formatedSchedule = result.map(r => formatSchedule(r));
 
     dispatch(schedulesFetchItem(formatedSchedule));
   } catch (err) {
-    console.error(err);
     dispatch(schedulesAsyncFailure(err.message));
   }
 };
@@ -31,7 +31,6 @@ export const asyncSchedulesAddItem = schedule => async dispatch => {
     const newSchedule = formatSchedule(result);
     dispatch(schedulesAddItem(newSchedule));
   } catch (err) {
-    console.error(err);
     dispatch(schedulesAsyncFailure(err.message));
   }
 };
@@ -45,7 +44,6 @@ export const asyncSchedulesDeleteItem = id => async (dispatch, getState) => {
     const newSchedules = currentSchedules.filter(s => s.id !== id);
     dispatch(schedulesDeleteItem(newSchedules));
   } catch (err) {
-    console.error(err);
     dispatch(schedulesAsyncFailure(err.message));
   }
 };
